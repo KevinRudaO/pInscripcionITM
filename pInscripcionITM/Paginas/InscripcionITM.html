@@ -1,0 +1,167 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Inscripción estudiantes</title>
+    <link href="../CSS/datatables.min.css" rel="stylesheet" />
+    <link href="../CSS/bootstrap.min.css" rel="stylesheet" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div id="dvRegistro">
+        <div id="dvPrincipalRegistro">
+            <main>
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-12">
+                            <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                <div class="card-header" style="height:50px;"><h4 class="text-center">INSCRIPCIÓN ESTUDIANTES - ITM</h4></div>
+                                <div class="card-body">
+                                    <form>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3 mb-md-0">
+                                                    <input class="form-control" id="txtDocumento" type="text" placeholder="." />
+                                                    <label for="txtDocumento">Documento</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3 mb-md-0">
+                                                    <input class="form-control" id="txtNombres" type="text" placeholder="." />
+                                                    <label for="txtNombres">Nombre</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <input class="form-control" id="txtColegio" type="text" placeholder="." />
+                                                    <label for="txtColegio">Colegio</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3 mb-md-0">
+                                                    <input class="form-control" id="txtEstratoVivienda" type="number" placeholder="." />
+                                                    <label for="txtEstratoVivienda">Estrato vivienda</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-12">
+                                                <div class="form-floating">
+                                                    <input class="form-control" id="txtEstratoColegio" type="number" placeholder="." />
+                                                    <label for="txtEstratoColegio">Estrato colegio</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-12">
+                                                <div class="form-control" style="align-content:center">
+                                                    <h4>POGRAMAS</h4>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3">
+                                            <div class="col-md-6">
+                                                <div class="form-floating">
+                                                    <select class="form-control" id="lstPrograma"></select>
+                                                    <label for="lstPrograma">Programa</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <div class="form-floating mb-3 mb-md-0">
+                                                    <select class="form-control" id="lstOpcion">
+                                                        <option value="Opcion 1">Opción 1</option>
+                                                        <option value="Opcion 2">Opción 2</option>
+                                                        <option value="Opcion 3">Opción 3</option>
+                                                        <option value="Opcion 4">Opción 4</option>
+                                                    </select>
+                                                    <label for="lstOpcion">Opción</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3" id="dvGrabar">
+                                            <div class="col-md-4">
+                                                <div class="mt-4 mb-0">
+                                                    <div class="d-grid"><button class="btn btn-primary btn-block" id="btnAgregar" type="button">AGREGAR PROGRAMA A LISTA</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mt-4 mb-0">
+                                                    <div class="d-grid"><button class="btn btn-primary btn-block" id="btnGrabarPrograma" type="button">GRABAR PROGRAMA</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mt-4 mb-0">
+                                                    <div class="d-grid"><button class="btn btn-secondary btn-block" id="btnLimpiar" type="button">LIMPIAR</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="row mb-3" id="dvModificarEliminar">
+                                            <div class="col-md-4">
+                                                <div class="mt-4 mb-0">
+                                                    <div class="d-grid"><button class="btn btn-primary btn-block" id="btnModificar" type="button">MODIFICAR</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mt-4 mb-0">
+                                                    <div class="d-grid"><button class="btn btn-primary btn-block" id="btnEliminar" type="button">ELIMINAR</button></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4">
+                                                <div class="mt-4 mb-0">
+                                                    <div class="d-grid"><button class="btn btn-secondary btn-block" id="btnCancelar" type="button">CANCELAR</button></div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div id="dvMensaje" class="card-footer d-flex align-items-center justify-content-between"></div>
+                                        <div id="dvTabla">
+                                            <table id="tblProgramas" class="display" style="width:100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id Programa</th>
+                                                        <th>Programa</th>
+                                                        <th>Opcion</th>
+                                                    </tr>
+                                                </thead>
+                                            </table>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+        <div id="dvRegistro_footer">
+            <footer class="py-4 bg-light mt-auto">
+                <div class="container-fluid px-4">
+                    <div class="d-flex align-items-center justify-content-between small">
+                        <div class="text-muted">2022</div>
+                        <div>
+                            <a href="#">Política</a>
+                            &middot;
+                            <a href="#">Términos y condiciones</a>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/datatables.min.js"></script>
+    <script src="../Comunes/Combos.js"></script>
+    <script src="../javascript/InscripcionITM.js"></script>
+</body>
+</html>
